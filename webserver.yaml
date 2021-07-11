@@ -1,6 +1,7 @@
 ---
-- hosts: localhost
+- hosts: 172.31.14.107
   become: yes
+  gather_facts: yes
   tasks: 
   - name: i want to install webserver on ubuntu node
     apt:
