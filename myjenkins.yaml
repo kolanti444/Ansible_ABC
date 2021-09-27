@@ -1,5 +1,5 @@
 ---
-- hosts: ubuntu server 
+- hosts: all 
   become: yes
   tasks:
   - name: updating apt-get cache
