@@ -6,7 +6,7 @@
     apt: 
      update_cache: yes
 
-  - name: install openjdk-8-jdk on ubuntu server
+  - name: install java8 on ubuntu server
     apt:
     - name: openjdk-8-jdk
       state: present
