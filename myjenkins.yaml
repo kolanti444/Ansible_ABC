@@ -1,6 +1,7 @@
 ---
 - hosts: 172.31.82.130 
   become: yes
+  gather_facts: yes
   tasks:
   - name: updating apt-get cache
     apt: 
