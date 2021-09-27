@@ -6,9 +6,9 @@
     apt: 
      update_cache: yes
 
-  - name: install default-jdk on ubuntu server
+  - name: install openjdk-8-jdk on ubuntu server
     apt:
-    - name: default-jdk
+    - name: openjdk-8-jdk
       state: present
 
   - name: install maven on ubuntu server
