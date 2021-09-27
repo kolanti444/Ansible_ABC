@@ -8,13 +8,13 @@
 
   - name: install java8
     apt:
-    - name: default-jdk
-      state: present
+     name: default-jdk
+     state: present
 
   - name: install maven 
     apt:
-    - name: maven
-      state: present
+     name: maven
+     state: present
 
   - name: ensure the repository to be added
     get_url:
