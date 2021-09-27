@@ -1,0 +1,39 @@
+---
+- hosts: 172.31.82.130 
+  become: yes
+  tasks:
+  - name: updating apt-get cache
+    apt: 
+     update_cache: yes
+
+  - name: install default-jdk on ubuntu server
+    apt:
+    - name: default-jdk
+      state: present
+
+  - name: install maven on ubuntu server
+    apt:
+    - name: maven
+      state: present
+
+  - name: ensure the repository to be added
+    get_url:
+      url: wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+
+
+  - name:  create required set up files
+    shell: echo deb https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list
+
+  - name: updating apt-get cache
+    apt: 
+     update_cache: yes
+
+  - name: install jenkins only
+    apt:
+     name: jenkins
+     state: present
+
+  - name: starting jenkins
+    systemd: 
+      name: jenkins
+      state: present
