@@ -12,7 +12,7 @@
      name: default-jdk
      state: present
 
-  - name: install maven 
+  - name: install maven sathish kumar kolanty
     apt:
      name: maven
      state: present
